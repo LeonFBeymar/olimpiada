@@ -37,4 +37,39 @@ db.Sequelize = Sequelize;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+db.sala = require("../models/sala.js")(sequelize,Sequelize);
+db.exposicion = require("../models/exposicion")(sequelize,Sequelize);
+db.visitas = require("../models/visitas")
+
+db.sala.hasMany(db.exposicion, {
+  foreignKey: "idsala"
+});
+
+
+
+
+
+
+
+
+
+
 module.exports = db;
