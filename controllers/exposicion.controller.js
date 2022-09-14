@@ -1,22 +1,22 @@
-const express = require('express')
-const router = express.Router()
+const express = require('express');
+const router = express.Router();
+import exposicion from "../models/exposicion";
 
-router.get("localhost/exposicion", (req, res) => {
-
-
+router.get("/exposicion", (req, res) => {
+    res.send(exposicion)
 })
 
-router.post("localhost/exposicion", (req, res) => {
+router.post("/exposicion", (req, res) => {
+    let exposicionNueva = req.body
+    exposicion.
+})
+
+router.put("/exposicion", (req, res) => {
 
     
 })
 
-router.put("localhost/exposicion", (req, res) => {
-
-    
-})
-
-router.delete("localhost/exposicion", (req, res) => {
+router.delete("/exposicion", (req, res) => {
 
     
 })

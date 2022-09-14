@@ -35,40 +35,30 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 
+db.Sala = require("./sala.js")(sequelize,Sequelize);
+db.Exposicion = require("./exposicion.js")(sequelize,Sequelize);
+db.Visitas = require("./visitas.js")(sequelize,Sequelize);
+db.Guia = require("./guia.js")(sequelize,Sequelize);
+db.Opinion = require("./opinion.js")(sequelize,Sequelize);
+db.Turno = require("./turno.js")(sequelize,Sequelize);
+db.Usuario = require("./usuario.js")(sequelize,Sequelize);
+db.Visitante = require("./visitante.js")(sequelize,Sequelize);
+db.Museo = require("./museo.js")(sequelize,Sequelize);
 
+// db.Sala.hasMany(db.Exposicion, {
+//   foreignKey: "IdSala"
+// });
+db.Sala.belongsToMany(db.Visitas, {
+  through: "VisitasSalas",
+  as: "visitas",
+  foreignKey: "salaId"
+})
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-db.sala = require("../models/sala.js")(sequelize,Sequelize);
-db.exposicion = require("../models/exposicion")(sequelize,Sequelize);
-db.visitas = require("../models/visitas")(sequelize,Sequelize);
-db.guia = require("../models/guia")(sequelize,Sequelize);
-db.opinion = require("../models/opinion")(sequelize,Sequelize);
-db.turno = require("../models/turno")(sequelize,Sequelize);
-db
-
-db.sala.hasMany(db.exposicion, {
-  foreignKey: "idsala"
-});
-
-
-
+db.Visitas.belongsToMany(db.Sala, {
+  through: "VisitasSalas",
+  as: "salas",
+  foreignKey: "visitasId"
+})
 
 
 

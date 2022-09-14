@@ -1,22 +1,22 @@
 const express = require('express')
 const router = express.Router()
 
-router.get("localhost/turno", (req, res) => {
+router.get("/turno", (req, res) => {
 
 
 })
 
-router.post("localhost/turno", (req, res) => {
+router.post("/turno", (req, res) => {
 
     
 })
 
-router.put("localhost/turno", (req, res) => {
+router.put("/turno", (req, res) => {
 
     
 })
 
-router.delete("localhost/turno", (req, res) => {
+router.delete("/turno", (req, res) => {
 
     
 })
